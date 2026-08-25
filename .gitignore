@@ -15,3 +15,7 @@ account.json
 .DS_Store
 .vscode/*
 !.vscode/extensions.json
+android/.gradle/
+android/**/build/
+android/local.properties
+android/.idea/

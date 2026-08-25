@@ -1,10 +1,18 @@
 # Find Me
 
-A small web app for **your own AirTags**, built around [FindMy.py](https://github.com/malmeloo/FindMy.py).
+A personal dashboard and Android app for **your own AirTags**, built around [FindMy.py](https://github.com/malmeloo/FindMy.py).
 
 Sign in with an Apple ID (email, password, SMS or trusted-device 2FA), import AirTag key files, then pull location reports from Apple’s Find My network.
 
-This is a personal dashboard. It is not an Android client, not Sign in with Apple (OAuth), and not a way to look up tags that are not yours.
+This is for tags you already own. It is not Sign in with Apple (OAuth), and not a way to look up tags that are not yours.
+
+## Disclaimer
+
+**Use at your own risk.** This project is unofficial and is not affiliated with, endorsed by, or supported by Apple Inc. It talks to undocumented Find My / Apple account endpoints and uses third-party Anisette services. Apple can change or break those APIs at any time, and misuse (including aggressive login attempts or shared Anisette abuse) may lock or restrict your Apple ID.
+
+- Prefer **Trusted device** 2FA when signing in.
+- Never commit or share Apple credentials, session files, or AirTag key JSON — anyone with those keys can query that tag.
+- The Android app name “FindMy” is not an Apple product; Apple’s Find My branding belongs to Apple.
 
 ## AirTags need keys, not just login
 
@@ -58,6 +66,15 @@ python run.py
 Open [http://127.0.0.1:43147](http://127.0.0.1:43147).
 
 FindMy.py may download Anisette libraries into `data/ani_libs.bin` on first live login.
+
+## Android app
+
+```bash
+cd android
+./gradlew.bat assembleDebug
+```
+
+Install `app/build/outputs/apk/debug/app-debug.apk`. The app is **FindMy**: Apple ID once (session encrypted on device), add/remove AirTag JSON, map shows only the selected tag, optional daily ~20:00 alerts for very low battery or no report for over a day.
 
 ## Stack
 
