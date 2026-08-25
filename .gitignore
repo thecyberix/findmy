@@ -9,7 +9,7 @@ dist-ssr
 .venv
 __pycache__/
 *.pyc
-data/
+/data/
 ani_libs.bin
 account.json
 .DS_Store
@@ -19,3 +19,4 @@ android/.gradle/
 android/**/build/
 android/local.properties
 android/.idea/
+!android/app/src/main/java/com/thecyberix/findmy/data/
